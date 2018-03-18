@@ -81,6 +81,14 @@ class PCA9685(object):
         self._device.write8(MODE1, mode1)
         time.sleep(0.005)  # wait for oscillator
 
+    def set_mode1(self, mode1):
+        mode1 = int(mode1)
+        self._device.write8(MODE1, mode1)
+
+    def set_mode2(self, mode2):
+        mode2 = int(mode2)
+        self._device.write8(MODE2, mode2)
+
     def set_pwm_freq(self, freq_hz):
         """Set the PWM frequency to the provided value in hertz."""
         prescaleval = 25000000.0    # 25MHz
